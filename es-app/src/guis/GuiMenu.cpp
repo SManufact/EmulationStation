@@ -455,9 +455,9 @@ void GuiMenu::openConfigInput()
 
 void GuiMenu::openQuitMenu()
 {
-	auto s = new GuiSettings(mWindow, "Quit");
+	auto s = new GuiSettings(mWindow, "QUIT");
 
-	Window* window = mWindow;
+ 	Window* window = mWindow;
 
 	ComponentListRow row;
 	if (UIModeController::getInstance()->isUIModeFull())
@@ -485,7 +485,7 @@ void GuiMenu::openQuitMenu()
 					SDL_PushEvent(&ev);
 				}, "NO", nullptr));
 			});
-			row.addElement(std::make_shared<TextComponent>(window, "QUIT", Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
+			row.addElement(std::make_shared<TextComponent>(window, "QUIT EMULATIONSTATION", Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
 			s->addRow(row);
 		}
 	}
