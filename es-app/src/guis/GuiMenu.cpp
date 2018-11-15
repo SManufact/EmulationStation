@@ -20,7 +20,7 @@
 
 GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "Main Menu"), mVersion(window)
 {
-	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
+//	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
 
 //	if (isFullUI)
 //		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
