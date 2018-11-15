@@ -168,7 +168,7 @@ public:
 		mLeftArrow.setResize(0, mText.getFont()->getLetterHeight());
 		mRightArrow.setResize(0, mText.getFont()->getLetterHeight());
 
-		if(mSize.x() < (mLeftArrow.getSize().x() + mRightArrow.getSize().x()))
+		if((mSize.x()+(unsigned int)(unsigned int)(0.01f * Math::min((int)Renderer::getScreenHeight(), (int)Renderer::getScreenWidth()))) < (mLeftArrow.getSize().x() + mRightArrow.getSize().x()))
 			LOG(LogWarning) << "OptionListComponent too narrow!";
 
 		mText.setSize(mSize.x() - mLeftArrow.getSize().x() - mRightArrow.getSize().x(), mText.getFont()->getHeight());
