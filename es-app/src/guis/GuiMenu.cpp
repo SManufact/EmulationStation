@@ -20,7 +20,7 @@
 
 GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "Main Menu"), mVersion(window)
 {
-	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
+//	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
 
 //	if (isFullUI)
 //		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
@@ -37,12 +37,12 @@ GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "Main Men
 //	if (isFullUI)
 //		addEntry("OTHER SETTINGS", 0x777777FF, true, [this] { openOtherSettings(); });
 
-	if (isFullUI)
+//	if (isFullUI)
 		addEntry("Configure Input", 0xFFFFFFFF, true, [this] { openConfigInput(); });
 
-	addEntry("Quit", 0x777777FF, true, [this] {openQuitMenu(); });
+	addEntry("Quit", 0xFFFFFFFF, true, [this] {openQuitMenu(); });
 
-//	addChild(&mMenu);
+	addChild(&mMenu);
 //	addVersionInfo();
 	setSize(mMenu.getSize());
 	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, Renderer::getScreenHeight() * 0.15f);
@@ -74,7 +74,7 @@ void GuiMenu::openScraperSettings()
 	openAndSave = [s, openAndSave] { s->save(); openAndSave(); };
 	row.makeAcceptInputHandler(openAndSave);
 
-	auto scrape_now = std::make_shared<TextComponent>(mWindow, "SCRAPE NOW", Font::get(FONT_SIZE_MEDIUM), 0x777777FF);
+	auto scrape_now = std::make_shared<TextComponent>(mWindow, "SCRAPE NOW", Font::get(FONT_SIZE_SMALL), 0x777777FF);
 	auto bracket = makeArrow(mWindow);
 	row.addElement(scrape_now, true);
 	row.addElement(bracket, false);
@@ -230,7 +230,7 @@ void GuiMenu::openUISettings()
 	// screensaver
 	ComponentListRow screensaver_row;
 	screensaver_row.elements.clear();
-	screensaver_row.addElement(std::make_shared<TextComponent>(mWindow, "SCREENSAVER SETTINGS", Font::get(FONT_SIZE_MEDIUM), 0x777777FF), true);
+	screensaver_row.addElement(std::make_shared<TextComponent>(mWindow, "SCREENSAVER SETTINGS", Font::get(FONT_SIZE_SMALL), 0x777777FF), true);
 	screensaver_row.addElement(makeArrow(mWindow), false);
 	screensaver_row.makeAcceptInputHandler(std::bind(&GuiMenu::openScreensaverOptions, this));
 	s->addRow(screensaver_row);
@@ -492,7 +492,7 @@ void GuiMenu::onSizeChanged()
 
 void GuiMenu::addEntry(const char* name, unsigned int color, bool add_arrow, const std::function<void()>& func)
 {
-	std::shared_ptr<Font> font = Font::get(FONT_SIZE_MEDIUM);
+	std::shared_ptr<Font> font = Font::get(FONT_SIZE_SMALL);
 
 	// populate the list
 	ComponentListRow row;
