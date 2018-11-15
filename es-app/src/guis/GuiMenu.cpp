@@ -18,32 +18,32 @@
 #include <SDL_events.h>
 #include <algorithm>
 
-GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "Main Menu"), mVersion(window)
+GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "MAIN MENU"), mVersion(window)
 {
-//	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
+	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
 
-//	if (isFullUI)
-//		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
+	if (isFullUI)
+		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
 
-//	addEntry("SOUND SETTINGS", 0x777777FF, true, [this] { openSoundSettings(); });
+	addEntry("SOUND SETTINGS", 0x777777FF, true, [this] { openSoundSettings(); });
 
 
-//	if (isFullUI)
-//		addEntry("UI SETTINGS", 0x777777FF, true, [this] { openUISettings(); });
+	if (isFullUI)
+		addEntry("UI SETTINGS", 0x777777FF, true, [this] { openUISettings(); });
 
-//	if (isFullUI)
-//		addEntry("GAME COLLECTION SETTINGS", 0x777777FF, true, [this] { openCollectionSystemSettings(); });
+	if (isFullUI)
+		addEntry("GAME COLLECTION SETTINGS", 0x777777FF, true, [this] { openCollectionSystemSettings(); });
 
-//	if (isFullUI)
-//		addEntry("OTHER SETTINGS", 0x777777FF, true, [this] { openOtherSettings(); });
+	if (isFullUI)
+		addEntry("OTHER SETTINGS", 0x777777FF, true, [this] { openOtherSettings(); });
 
-//	if (isFullUI)
-		addEntry("Configure Input", 0xFFFFFFFF, true, [this] { openConfigInput(); });
+	if (isFullUI)
+		addEntry("CONFIGURE INPUT", 0x777777FF, true, [this] { openConfigInput(); });
 
-	addEntry("Quit", 0xFFFFFFFF, true, [this] {openQuitMenu(); });
+	addEntry("QUIT", 0x777777FF, true, [this] {openQuitMenu(); });
 
 	addChild(&mMenu);
-//	addVersionInfo();
+	addVersionInfo();
 	setSize(mMenu.getSize());
 	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, Renderer::getScreenHeight() * 0.15f);
 }
@@ -445,17 +445,17 @@ void GuiMenu::openOtherSettings()
 void GuiMenu::openConfigInput()
 {
 	Window* window = mWindow;
-	window->pushGui(new GuiMsgBox(window, "Are you sure you want to configure input?", "Yes",
+	window->pushGui(new GuiMsgBox(window, "ARE YOU SURE YOU WANT TO CONFIGURE INPUT?", "YES",
 		[window] {
 		window->pushGui(new GuiDetectDevice(window, false, nullptr));
-	}, "N0", nullptr)
+	}, "NO", nullptr)
 	);
 
 }
 
 void GuiMenu::openQuitMenu()
 {
- 	Window* window = mWindow;
+	Window* window = mWindow;
 
 	window->pushGui(new GuiMsgBox(window, "Really quit?", "Yes",
 	[] {
@@ -469,7 +469,7 @@ void GuiMenu::addVersionInfo()
 {
 	std::string  buildDate = (Settings::getInstance()->getBool("Debug") ? std::string( "   (" + Utils::String::toUpper(PROGRAM_BUILT_STRING) + ")") : (""));
 
-	mVersion.setFont(Font::get(FONT_SIZE_MEDIUM));
+	mVersion.setFont(Font::get(FONT_SIZE_SMALL));
 	mVersion.setColor(0x5E5E5EFF);
 	mVersion.setText("EMULATIONSTATION V" + Utils::String::toUpper(PROGRAM_VERSION_STRING) + buildDate);
 	mVersion.setHorizontalAlignment(ALIGN_CENTER);
