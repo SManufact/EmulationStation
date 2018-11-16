@@ -40,7 +40,7 @@ GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "Main Men
 	if (isFullUI)
 		addEntry("CONFIGURE INPUT", 0x777777FF, true, [this] { openConfigInput(); });
 
-	addEntry("QUIT", 0x777777FF, true, [this] {openQuitMenu(); });
+	addEntry("Quit", 0x777777FF, true, [this] {openQuitMenu(); });
 
 	addChild(&mMenu);
 //	addVersionInfo();
