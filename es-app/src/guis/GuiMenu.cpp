@@ -43,7 +43,7 @@ GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "Main Men
 	addEntry("QUIT", 0x777777FF, true, [this] {openQuitMenu(); });
 
 	addChild(&mMenu);
-	addVersionInfo();
+//	addVersionInfo();
 	setSize(mMenu.getSize());
 	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, Renderer::getScreenHeight() * 0.15f);
 }
@@ -506,7 +506,7 @@ void GuiMenu::addEntry(const char* name, unsigned int color, bool add_arrow, con
 
 	row.makeAcceptInputHandler(func);
 
-	mMenu.addRow(row);
+//	mMenu.addRow(row);
 }
 
 bool GuiMenu::input(InputConfig* config, Input input)
