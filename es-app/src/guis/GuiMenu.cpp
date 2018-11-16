@@ -18,29 +18,29 @@
 #include <SDL_events.h>
 #include <algorithm>
 
-GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "Main Menu"), mVersion(window)
+GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "MAIN MENU"), mVersion(window)
 {
 	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
 
-	if (isFullUI)
-		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
+//	if (isFullUI)
+//		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
 
-	addEntry("SOUND SETTINGS", 0x777777FF, true, [this] { openSoundSettings(); });
+//	addEntry("SOUND SETTINGS", 0x777777FF, true, [this] { openSoundSettings(); });
 
 
-	if (isFullUI)
-		addEntry("UI SETTINGS", 0x777777FF, true, [this] { openUISettings(); });
+//	if (isFullUI)
+//		addEntry("UI SETTINGS", 0x777777FF, true, [this] { openUISettings(); });
 
-	if (isFullUI)
-		addEntry("GAME COLLECTION SETTINGS", 0x777777FF, true, [this] { openCollectionSystemSettings(); });
+//	if (isFullUI)
+//		addEntry("GAME COLLECTION SETTINGS", 0x777777FF, true, [this] { openCollectionSystemSettings(); });
 
-	if (isFullUI)
-		addEntry("OTHER SETTINGS", 0x777777FF, true, [this] { openOtherSettings(); });
+//	if (isFullUI)
+//		addEntry("OTHER SETTINGS", 0x777777FF, true, [this] { openOtherSettings(); });
 
 	if (isFullUI)
 		addEntry("CONFIGURE INPUT", 0x777777FF, true, [this] { openConfigInput(); });
 
-	addEntry("Quit", 0x777777FF, true, [this] {openQuitMenu(); });
+	addEntry("QUIT", 0x777777FF, true, [this] {openQuitMenu(); });
 
 	addChild(&mMenu);
 //	addVersionInfo();
