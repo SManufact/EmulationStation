@@ -18,7 +18,7 @@ MenuComponent::MenuComponent(Window* window, const char* title, const std::share
 	// set up title
 	mTitle = std::make_shared<TextComponent>(mWindow);
 	mTitle->setHorizontalAlignment(ALIGN_CENTER);
-	mTitle->setColor(0x555555FF);
+	mTitle->setColor(0x9c27b0FF);
 	setTitle(title, titleFont);
 	mGrid.setEntry(mTitle, Vector2i(0, 0), false);
 

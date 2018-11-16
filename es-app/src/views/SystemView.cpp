@@ -602,7 +602,7 @@ void  SystemView::getDefaultElements(void)
 	mCarousel.pos.y() = 0.5f * (mSize.y() - mCarousel.size.y());
 	mCarousel.origin.x() = 0.0f;
 	mCarousel.origin.y() = 0.0f;
-	mCarousel.color = 0xFFFFFFD8;
+//	mCarousel.color = 0xFFFFFFD8;
 	mCarousel.logoScale = 1.2f;
 	mCarousel.logoRotation = 7.5;
 	mCarousel.logoRotationOrigin.x() = -5;
@@ -615,10 +615,10 @@ void  SystemView::getDefaultElements(void)
 	// System Info Bar
 	mSystemInfo.setSize(mSize.x(), mSystemInfo.getFont()->getLetterHeight()*2.2f);
 	mSystemInfo.setPosition(0, (mCarousel.pos.y() + mCarousel.size.y() - 0.2f));
-	mSystemInfo.setBackgroundColor(0xDDDDDDD8);
+//	mSystemInfo.setBackgroundColor(0xDDDDDDD8);
 	mSystemInfo.setRenderBackground(true);
 	mSystemInfo.setFont(Font::get((int)(0.035f * mSize.y()), Font::getDefaultPath()));
-	mSystemInfo.setColor(0x000000FF);
+	mSystemInfo.setColor(0xFFFFFFFF);
 	mSystemInfo.setZIndex(50);
 	mSystemInfo.setDefaultZIndex(50);
 }

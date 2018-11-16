@@ -195,7 +195,7 @@ void ComponentGrid::updateSeparators()
 	}
 
 	mLineColors.reserve(mLines.size());
-	Renderer::buildGLColorArray((GLubyte*)mLineColors.data(), 0xC6C7C6FF, (unsigned int)mLines.size());
+	Renderer::buildGLColorArray((GLubyte*)mLineColors.data(), 0x000000FF, (unsigned int)mLines.size());
 }
 
 void ComponentGrid::onSizeChanged()

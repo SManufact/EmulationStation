@@ -42,7 +42,7 @@ GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "MAIN MEN
 
 	addEntry("QUIT", 0x777777FF, true, [this] {openQuitMenu(); });
 
-	addChild(&mMenu);
+//	addChild(&mMenu);
 //	addVersionInfo();
 	setSize(mMenu.getSize());
 	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, Renderer::getScreenHeight() * 0.15f);
