@@ -506,7 +506,7 @@ void GuiMenu::addEntry(const char* name, unsigned int color, bool add_arrow, con
 
 	row.makeAcceptInputHandler(func);
 
-//	mMenu.addRow(row);
+	mMenu.addRow(row);
 }
 
 bool GuiMenu::input(InputConfig* config, Input input)

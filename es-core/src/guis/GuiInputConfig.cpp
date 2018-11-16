@@ -68,20 +68,20 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 	// 0 is a spacer row
 	mGrid.setEntry(std::make_shared<GuiComponent>(mWindow), Vector2i(0, 0), false);
 
-	mTitle = std::make_shared<TextComponent>(mWindow, "CONFIGURING", Font::get(FONT_SIZE_LARGE), 0x555555FF, ALIGN_CENTER);
+	mTitle = std::make_shared<TextComponent>(mWindow, "Configuring", Font::get(FONT_SIZE_LARGE), 0x555555FF, ALIGN_CENTER);
 	mGrid.setEntry(mTitle, Vector2i(0, 1), false, true);
 	
 	std::stringstream ss;
 	if(target->getDeviceId() == DEVICE_KEYBOARD)
-		ss << "KEYBOARD";
+		ss << "Keyboard";
 	else if(target->getDeviceId() == DEVICE_CEC)
 		ss << "CEC";
 	else
-		ss << "GAMEPAD " << (target->getDeviceId() + 1);
+		ss << "Gamepad " << (target->getDeviceId() + 1);
 	mSubtitle1 = std::make_shared<TextComponent>(mWindow, Utils::String::toUpper(ss.str()), Font::get(FONT_SIZE_MEDIUM), 0x555555FF, ALIGN_CENTER);
 	mGrid.setEntry(mSubtitle1, Vector2i(0, 2), false, true);
 
-	mSubtitle2 = std::make_shared<TextComponent>(mWindow, "HOLD ANY BUTTON TO SKIP", Font::get(FONT_SIZE_SMALL), 0x99999900, ALIGN_CENTER);
+	mSubtitle2 = std::make_shared<TextComponent>(mWindow, "Hold any button to skip", Font::get(FONT_SIZE_SMALL), 0x99999900, ALIGN_CENTER);
 	mGrid.setEntry(mSubtitle2, Vector2i(0, 3), false, true);
 
 	// 4 is a spacer row
@@ -107,7 +107,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 		auto text = std::make_shared<TextComponent>(mWindow, GUI_INPUT_CONFIG_LIST[i].dispName, Font::get(FONT_SIZE_MEDIUM), 0x777777FF);
 		row.addElement(text, true);
 
-		auto mapping = std::make_shared<TextComponent>(mWindow, "-NOT DEFINED-", Font::get(FONT_SIZE_MEDIUM, FONT_PATH_LIGHT), 0x999999FF, ALIGN_RIGHT);
+		auto mapping = std::make_shared<TextComponent>(mWindow, "-Not defined-", Font::get(FONT_SIZE_MEDIUM, FONT_PATH_LIGHT), 0x999999FF, ALIGN_RIGHT);
 		setNotDefined(mapping); // overrides text and color set above
 		row.addElement(mapping, true);
 		mMappings.push_back(mapping);
@@ -188,7 +188,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 		Input input;
 		if (!mTargetConfig->getInputByName("HotKeyEnable", &input)) {
 			mWindow->pushGui(new GuiMsgBox(mWindow,
-				"YOU DIDN'T CHOOSE A HOTKEY ENABLE BUTTON. THIS IS REQUIRED FOR EXITING GAMES WITH A CONTROLLER. DO YOU WANT TO USE THE SELECT BUTTON DEFAULT ? PLEASE ANSWER YES TO USE SELECT OR NO TO NOT SET A HOTKEY ENABLE BUTTON.",
+				"You didn't choose a Menu Button. This is required for exiting games whit a controller. Do you want to use the Select Button default? Please answer Yes to use Select Button or No to not set a Menu Button.",
 				"YES", [this, okFunction] {
 					Input input;
 					mTargetConfig->getInputByName("Select", &input);
@@ -283,13 +283,13 @@ void GuiInputConfig::rowDone()
 
 void GuiInputConfig::setPress(const std::shared_ptr<TextComponent>& text)
 {
-	text->setText("PRESS ANYTHING");
+	text->setText("Press anything");
 	text->setColor(0x656565FF);
 }
 
 void GuiInputConfig::setNotDefined(const std::shared_ptr<TextComponent>& text)
 {
-	text->setText("-NOT DEFINED-");
+	text->setText("-Not defined-");
 	text->setColor(0x999999FF);
 }
 
@@ -301,7 +301,7 @@ void GuiInputConfig::setAssignedTo(const std::shared_ptr<TextComponent>& text, I
 
 void GuiInputConfig::error(const std::shared_ptr<TextComponent>& text, const std::string& /*msg*/)
 {
-	text->setText("ALREADY TAKEN");
+	text->setText("Already taken");
 	text->setColor(0x656565FF);
 }
 
