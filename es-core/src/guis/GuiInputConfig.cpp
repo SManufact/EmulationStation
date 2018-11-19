@@ -95,7 +95,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 		// icon
 		auto icon = std::make_shared<ImageComponent>(mWindow);
 		icon->setImage(GUI_INPUT_CONFIG_LIST[i].icon);
-		icon->setColorShift(0x000000FF);
+		icon->setColorShift(0x777777FF);
 		icon->setResize(0, Font::get(FONT_SIZE_MEDIUM)->getLetterHeight() * 1.25f);
 		row.addElement(icon, false);
 
@@ -104,7 +104,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 		spacer->setSize(16, 0);
 		row.addElement(spacer, false);
 
-		auto text = std::make_shared<TextComponent>(mWindow, GUI_INPUT_CONFIG_LIST[i].dispName, Font::get(FONT_SIZE_MEDIUM), 0x000000FF);
+		auto text = std::make_shared<TextComponent>(mWindow, GUI_INPUT_CONFIG_LIST[i].dispName, Font::get(FONT_SIZE_MEDIUM), 0x777777FF);
 		row.addElement(text, true);
 
 		auto mapping = std::make_shared<TextComponent>(mWindow, "-Not defined-", Font::get(FONT_SIZE_MEDIUM, FONT_PATH_LIGHT), 0x999999FF, ALIGN_RIGHT);
@@ -253,7 +253,7 @@ void GuiInputConfig::update(int deltaTime)
 				std::stringstream ss;
 				ss << "Hold for " << HOLD_TO_SKIP_MS/1000 - curSec << "s to skip";
 				text->setText(ss.str());
-				text->setColor(0x000000FF);
+				text->setColor(0x777777FF);
 			}
 		}
 	}
@@ -284,7 +284,7 @@ void GuiInputConfig::rowDone()
 void GuiInputConfig::setPress(const std::shared_ptr<TextComponent>& text)
 {
 	text->setText("Press anything");
-	text->setColor(0x000000FF);
+	text->setColor(0x656565FF);
 }
 
 void GuiInputConfig::setNotDefined(const std::shared_ptr<TextComponent>& text)
@@ -302,7 +302,7 @@ void GuiInputConfig::setAssignedTo(const std::shared_ptr<TextComponent>& text, I
 void GuiInputConfig::error(const std::shared_ptr<TextComponent>& text, const std::string& /*msg*/)
 {
 	text->setText("Already taken");
-	text->setColor(0x000000FF);
+	text->setColor(0x656565FF);
 }
 
 bool GuiInputConfig::assign(Input input, int inputId)
