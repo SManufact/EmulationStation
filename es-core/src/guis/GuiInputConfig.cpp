@@ -95,7 +95,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 		// icon
 		auto icon = std::make_shared<ImageComponent>(mWindow);
 		icon->setImage(GUI_INPUT_CONFIG_LIST[i].icon);
-		icon->setColorShift(0x777777FF);
+		icon->setColorShift(0xFFFFFFFF);
 		icon->setResize(0, Font::get(FONT_SIZE_MEDIUM)->getLetterHeight() * 1.25f);
 		row.addElement(icon, false);
 
