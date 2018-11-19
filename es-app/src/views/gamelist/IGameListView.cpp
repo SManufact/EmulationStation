@@ -6,8 +6,8 @@
 #include "Sound.h"
 #include "Window.h"
 
-//bool IGameListView::input(InputConfig* config, Input input)
-//{
+bool IGameListView::input(InputConfig* config, Input input)
+{
 	// select to open GuiGamelistOptions
 //	if(!UIModeController::getInstance()->isUIModeKid() && config->isMappedTo("select", input) && input.value)
 //	{
@@ -24,8 +24,8 @@
 //		return true;
 //	}
 //
-//	return GuiComponent::input(config, input);
-//}
+	return GuiComponent::input(config, input);
+}
 
 void IGameListView::setTheme(const std::shared_ptr<ThemeData>& theme)
 {
