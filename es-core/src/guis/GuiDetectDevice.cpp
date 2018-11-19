@@ -42,7 +42,7 @@ GuiDetectDevice::GuiDetectDevice(Window* window, bool firstRun, const std::funct
 	mGrid.setEntry(mMsg1, Vector2i(0, 2), false, true);
 
 	const char* msg2str = firstRun ? "Press F4 to quit at any time." : "Press ESC to cancel.";
-	mMsg2 = std::make_shared<TextComponent>(mWindow, msg2str, Font::get(FONT_SIZE_SMALL), 0x777777FF, ALIGN_CENTER);
+	mMsg2 = std::make_shared<TextComponent>(mWindow, msg2str, Font::get(FONT_SIZE_SMALL), 0xFFFFFFFF, ALIGN_CENTER);
 	mGrid.setEntry(mMsg2, Vector2i(0, 3), false, true);
 
 	// currently held device
