@@ -206,7 +206,7 @@ void ComponentList::render(const Transform4x4f& parentTrans)
 		const float selectedRowHeight = getRowHeight(mEntries.at(mCursor).data);
 		Renderer::drawRect(0.0f, mSelectorBarOffset, mSize.x(), selectedRowHeight, 0x9c27b0FF,
 			GL_ONE_MINUS_DST_COLOR, GL_ZERO);
-		Renderer::drawRect(0.0f, mSelectorBarOffset, mSize.x(), selectedRowHeight, 0xFFFFFFFF,
+		Renderer::drawRect(0.0f, mSelectorBarOffset, mSize.x(), selectedRowHeight, 0x9c27b0FF,
 			GL_ONE, GL_ONE);
 
 		// hack to draw 2px dark on left/right of the bar
