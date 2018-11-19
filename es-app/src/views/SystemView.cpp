@@ -196,12 +196,12 @@ bool SystemView::input(InputConfig* config, Input input)
 			config->isMappedTo("up", input) ||
 			config->isMappedTo("down", input))
 			listInput(0);
-		if(!UIModeController::getInstance()->isUIModeKid() && config->isMappedTo("select", input) && Settings::getInstance()->getBool("ScreenSaverControls"))
-		{
-			mWindow->startScreenSaver();
-			mWindow->renderScreenSaver();
-			return true;
-		}
+//		if(!UIModeController::getInstance()->isUIModeKid() && config->isMappedTo("select", input) && Settings::getInstance()->getBool("ScreenSaverControls"))
+//		{
+//			mWindow->startScreenSaver();
+//			mWindow->renderScreenSaver();
+//			return true;
+//		}
 	}
 
 	return GuiComponent::input(config, input);
@@ -382,8 +382,8 @@ std::vector<HelpPrompt> SystemView::getHelpPrompts()
 	prompts.push_back(HelpPrompt("a", "select"));
 	prompts.push_back(HelpPrompt("x", "random"));
 
-	if (!UIModeController::getInstance()->isUIModeKid() && Settings::getInstance()->getBool("ScreenSaverControls"))
-		prompts.push_back(HelpPrompt("select", "launch screensaver"));
+//	if (!UIModeController::getInstance()->isUIModeKid() && Settings::getInstance()->getBool("ScreenSaverControls"))
+//		prompts.push_back(HelpPrompt("select", "launch screensaver"));
 
 	return prompts;
 }
