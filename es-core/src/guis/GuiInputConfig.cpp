@@ -35,9 +35,9 @@ static const InputConfigStructure GUI_INPUT_CONFIG_LIST[inputCount] =
 	{ "LeftThumb",        true,  "Left Thumb",         ":/help/analog_thumb.svg" },
 	{ "RightThumb",       true,  "Right Thumb",        ":/help/analog_thumb.svg" },
 	{ "LeftAnalogUp",     true,  "Left Analog Up",     ":/help/analog_up.svg" },
-	{ "LeftAnalogDown",   true,  "Left Analog DOWN",   ":/help/analog_down.svg" },
-	{ "LeftAnalogLeft",   true,  "Left Analog LEFT",   ":/help/analog_left.svg" },
-	{ "LeftAnalogRight",  true,  "Left Analog RIGHT",  ":/help/analog_right.svg" },
+	{ "LeftAnalogDown",   true,  "Left Analog Down",   ":/help/analog_down.svg" },
+	{ "LeftAnalogLeft",   true,  "Left Analog Left",   ":/help/analog_left.svg" },
+	{ "LeftAnalogRight",  true,  "Left Analog Right",  ":/help/analog_right.svg" },
 	{ "RightAnalogUp",    true,  "Right Analog Up",    ":/help/analog_up.svg" },
 	{ "RightAnalogDown",  true,  "Right Analog Down",  ":/help/analog_down.svg" },
 	{ "RightAnalogLeft",  true,  "Right Analog Left",  ":/help/analog_left.svg" },
@@ -95,7 +95,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 		// icon
 		auto icon = std::make_shared<ImageComponent>(mWindow);
 		icon->setImage(GUI_INPUT_CONFIG_LIST[i].icon);
-		icon->setColorShift(0x777777FF);
+		icon->setColorShift(0x000000FF);
 		icon->setResize(0, Font::get(FONT_SIZE_MEDIUM)->getLetterHeight() * 1.25f);
 		row.addElement(icon, false);
 
@@ -104,7 +104,7 @@ GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfi
 		spacer->setSize(16, 0);
 		row.addElement(spacer, false);
 
-		auto text = std::make_shared<TextComponent>(mWindow, GUI_INPUT_CONFIG_LIST[i].dispName, Font::get(FONT_SIZE_MEDIUM), 0x777777FF);
+		auto text = std::make_shared<TextComponent>(mWindow, GUI_INPUT_CONFIG_LIST[i].dispName, Font::get(FONT_SIZE_MEDIUM), 0x000000FF);
 		row.addElement(text, true);
 
 		auto mapping = std::make_shared<TextComponent>(mWindow, "-Not defined-", Font::get(FONT_SIZE_MEDIUM, FONT_PATH_LIGHT), 0x999999FF, ALIGN_RIGHT);
@@ -251,9 +251,9 @@ void GuiInputConfig::update(int deltaTime)
 				// crossed the second boundary, update text
 				const auto& text = mMappings.at(mHeldInputId);
 				std::stringstream ss;
-				ss << "HOLD FOR " << HOLD_TO_SKIP_MS/1000 - curSec << "S TO SKIP";
+				ss << "Hold for " << HOLD_TO_SKIP_MS/1000 - curSec << "s to skip";
 				text->setText(ss.str());
-				text->setColor(0x777777FF);
+				text->setColor(0x000000FF);
 			}
 		}
 	}
@@ -284,7 +284,7 @@ void GuiInputConfig::rowDone()
 void GuiInputConfig::setPress(const std::shared_ptr<TextComponent>& text)
 {
 	text->setText("Press anything");
-	text->setColor(0x656565FF);
+	text->setColor(0x000000FF);
 }
 
 void GuiInputConfig::setNotDefined(const std::shared_ptr<TextComponent>& text)
@@ -302,7 +302,7 @@ void GuiInputConfig::setAssignedTo(const std::shared_ptr<TextComponent>& text, I
 void GuiInputConfig::error(const std::shared_ptr<TextComponent>& text, const std::string& /*msg*/)
 {
 	text->setText("Already taken");
-	text->setColor(0x656565FF);
+	text->setColor(0x000000FF);
 }
 
 bool GuiInputConfig::assign(Input input, int inputId)
