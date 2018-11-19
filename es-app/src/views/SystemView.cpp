@@ -596,12 +596,12 @@ void  SystemView::getDefaultElements(void)
 	// Carousel
 	mCarousel.type = HORIZONTAL;
 	mCarousel.logoAlignment = ALIGN_CENTER;
-//	mCarousel.size.x() = mSize.x();
-//	mCarousel.size.y() = 0.2325f * mSize.y();
-//	mCarousel.pos.x() = 0.0f;
-//	mCarousel.pos.y() = 0.5f * (mSize.y() - mCarousel.size.y());
-//	mCarousel.origin.x() = 0.0f;
-//	mCarousel.origin.y() = 0.0f;
+	mCarousel.size.x() = mSize.x();
+	mCarousel.size.y() = 0.2325f * mSize.y();
+	mCarousel.pos.x() = 0.0f;
+	mCarousel.pos.y() = 0.5f * (mSize.y() - mCarousel.size.y());
+	mCarousel.origin.x() = 0.0f;
+	mCarousel.origin.y() = 0.0f;
 //	mCarousel.color = 0xFFFFFFD8;
 	mCarousel.logoScale = 1.2f;
 	mCarousel.logoRotation = 7.5;

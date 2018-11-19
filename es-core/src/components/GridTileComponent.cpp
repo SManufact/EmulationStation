@@ -16,11 +16,11 @@ GridTileComponent::GridTileComponent(Window* window) : GuiComponent(window), mBa
 
 	mSelectedProperties.mSize = getSelectedTileSize();
 	mSelectedProperties.mPadding = mDefaultProperties.mPadding;
-	mSelectedProperties.mImageColor = 0x9c27b0FF;
+//	mSelectedProperties.mImageColor = 0x9c27b0FF;
 	mSelectedProperties.mBackgroundImage = mDefaultProperties.mBackgroundImage;
 	mSelectedProperties.mBackgroundCornerSize = mDefaultProperties.mBackgroundCornerSize;
-	mSelectedProperties.mBackgroundCenterColor = 0x9c27b0FF;
-	mSelectedProperties.mBackgroundEdgeColor = 0x9c27b0FF;
+//	mSelectedProperties.mBackgroundCenterColor = 0x9c27b0FF;
+//	mSelectedProperties.mBackgroundEdgeColor = 0x9c27b0FF;
 
 	mImage = std::make_shared<ImageComponent>(mWindow);
 	mImage->setOrigin(0.5f, 0.5f);
