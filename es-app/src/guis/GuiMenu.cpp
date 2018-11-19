@@ -38,14 +38,14 @@ GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "MAIN MEN
 //		addEntry("OTHER SETTINGS", 0x777777FF, true, [this] { openOtherSettings(); });
 
 	if (isFullUI)
-		addEntry("CONFIGURE INPUT", 0x777777FF, true, [this] { openConfigInput(); });
+		addEntry("CONFIGURE INPUT", 0xFFFFFFFF, true, [this] { openConfigInput(); });
 
-	addEntry("QUIT", 0x777777FF, true, [this] {openQuitMenu(); });
+	addEntry("QUIT", 0xFFFFFFFF, true, [this] {openQuitMenu(); });
 
 	addChild(&mMenu);
 //	addVersionInfo();
 	setSize(mMenu.getSize()); 
-	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, Renderer::getScreenHeight() * 0.15f);
+	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, (Renderer::getScreenHeight()- mSize.y()) / 2);
 }
 
 void GuiMenu::openScraperSettings()

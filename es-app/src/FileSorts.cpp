@@ -8,8 +8,8 @@ namespace FileSorts
 		FileData::SortType(&compareName, true, "filename, ascending"),
 		FileData::SortType(&compareName, false, "filename, descending"),
 
-		FileData::SortType(&compareRating, true, "rating, ascending"),
-		FileData::SortType(&compareRating, false, "rating, descending"),
+//		FileData::SortType(&compareRating, true, "rating, ascending"),
+//		FileData::SortType(&compareRating, false, "rating, descending"),
 
 		FileData::SortType(&compareTimesPlayed, true, "times played, ascending"),
 		FileData::SortType(&compareTimesPlayed, false, "times played, descending"),
@@ -17,20 +17,20 @@ namespace FileSorts
 		FileData::SortType(&compareLastPlayed, true, "last played, ascending"),
 		FileData::SortType(&compareLastPlayed, false, "last played, descending"),
 
-		FileData::SortType(&compareNumPlayers, true, "number players, ascending"),
-		FileData::SortType(&compareNumPlayers, false, "number players, descending"),
+//		FileData::SortType(&compareNumPlayers, true, "number players, ascending"),
+//		FileData::SortType(&compareNumPlayers, false, "number players, descending"),
 
-		FileData::SortType(&compareReleaseDate, true, "release date, ascending"),
-		FileData::SortType(&compareReleaseDate, false, "release date, descending"),
+//		FileData::SortType(&compareReleaseDate, true, "release date, ascending"),
+//		FileData::SortType(&compareReleaseDate, false, "release date, descending"),
 
-		FileData::SortType(&compareGenre, true, "genre, ascending"),
-		FileData::SortType(&compareGenre, false, "genre, descending"),
+//		FileData::SortType(&compareGenre, true, "genre, ascending"),
+//		FileData::SortType(&compareGenre, false, "genre, descending"),
 
-		FileData::SortType(&compareDeveloper, true, "developer, ascending"),
-		FileData::SortType(&compareDeveloper, false, "developer, descending"),
+//		FileData::SortType(&compareDeveloper, true, "developer, ascending"),
+//		FileData::SortType(&compareDeveloper, false, "developer, descending"),
 
-		FileData::SortType(&comparePublisher, true, "publisher, ascending"),
-		FileData::SortType(&comparePublisher, false, "publisher, descending"),
+//		FileData::SortType(&comparePublisher, true, "publisher, ascending"),
+//		FileData::SortType(&comparePublisher, false, "publisher, descending"),
 
 		FileData::SortType(&compareSystem, true, "system, ascending"),
 		FileData::SortType(&compareSystem, false, "system, descending")
