@@ -183,11 +183,11 @@ bool SystemView::input(InputConfig* config, Input input)
 			ViewController::get()->goToGameList(getSelected());
 			return true;
 		}
-		if (config->isMappedTo("x", input))
+		if (config->isMappedTo("b", input))
 		{
-			// get random system
-			// go to system
-			setCursor(SystemData::getRandomSystem());
+			SDL_Event ev;
+			ev.type = SDL_QUIT;
+			SDL_PushEvent(&ev);
 			return true;
 		}
 	}else{
@@ -372,21 +372,21 @@ void SystemView::render(const Transform4x4f& parentTrans)
 	renderExtras(trans, minMax.second, INT16_MAX);
 }
 
-std::vector<HelpPrompt> SystemView::getHelpPrompts()
-{
-	std::vector<HelpPrompt> prompts;
-	if (mCarousel.type == VERTICAL || mCarousel.type == VERTICAL_WHEEL)
-		prompts.push_back(HelpPrompt("up/down", "choose"));
-	else
-		prompts.push_back(HelpPrompt("left/right", "choose"));
-	prompts.push_back(HelpPrompt("a", "select"));
-	prompts.push_back(HelpPrompt("x", "random"));
+//std::vector<HelpPrompt> SystemView::getHelpPrompts()
+//{
+//	std::vector<HelpPrompt> prompts;
+//	if (mCarousel.type == VERTICAL || mCarousel.type == VERTICAL_WHEEL)
+//		prompts.push_back(HelpPrompt("up/down", "choose"));
+//	else
+//		prompts.push_back(HelpPrompt("left/right", "choose"));
+//	prompts.push_back(HelpPrompt("a", "select"));
+//	prompts.push_back(HelpPrompt("x", "random"));
 
 //	if (!UIModeController::getInstance()->isUIModeKid() && Settings::getInstance()->getBool("ScreenSaverControls"))
 //		prompts.push_back(HelpPrompt("select", "launch screensaver"));
 
-	return prompts;
-}
+//	return prompts;
+//}
 
 HelpStyle SystemView::getHelpStyle()
 {

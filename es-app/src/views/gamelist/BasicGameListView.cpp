@@ -141,23 +141,23 @@ void BasicGameListView::remove(FileData *game, bool deleteFile)
 	onFileChanged(parent, FILE_REMOVED);           // update the view, with game removed
 }
 
-std::vector<HelpPrompt> BasicGameListView::getHelpPrompts()
-{
-	std::vector<HelpPrompt> prompts;
+//std::vector<HelpPrompt> BasicGameListView::getHelpPrompts()
+//{
+//	std::vector<HelpPrompt> prompts;
 
-	if(Settings::getInstance()->getBool("QuickSystemSelect"))
-		prompts.push_back(HelpPrompt("left/right", "system"));
-	prompts.push_back(HelpPrompt("up/down", "choose"));
-	prompts.push_back(HelpPrompt("a", "launch"));
-	prompts.push_back(HelpPrompt("b", "back"));
+//	if(Settings::getInstance()->getBool("QuickSystemSelect"))
+//		prompts.push_back(HelpPrompt("left/right", "system"));
+//	prompts.push_back(HelpPrompt("up/down", "choose"));
+//	prompts.push_back(HelpPrompt("a", "launch"));
+//	prompts.push_back(HelpPrompt("b", "back"));
 //	if(!UIModeController::getInstance()->isUIModeKid())
 //		prompts.push_back(HelpPrompt("select", "options"));
-	if(mRoot->getSystem()->isGameSystem())
-		prompts.push_back(HelpPrompt("x", "random"));
-	if(mRoot->getSystem()->isGameSystem() && UIModeController::getInstance()->isUIModeFull())
-	{
-		std::string prompt = CollectionSystemManager::get()->getEditingCollection();
-		prompts.push_back(HelpPrompt("y", prompt));
-	}
-	return prompts;
-}
+//	if(mRoot->getSystem()->isGameSystem())
+//		prompts.push_back(HelpPrompt("x", "random"));
+//	if(mRoot->getSystem()->isGameSystem() && UIModeController::getInstance()->isUIModeFull())
+//	{
+//		std::string prompt = CollectionSystemManager::get()->getEditingCollection();
+//		prompts.push_back(HelpPrompt("y", prompt));
+//	}
+//	return prompts;
+//}
