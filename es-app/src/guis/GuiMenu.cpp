@@ -18,9 +18,9 @@
 #include <SDL_events.h>
 #include <algorithm>
 
-//GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "MAIN MENU"), mVersion(window)
-//{
-//	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
+GuiMenu::GuiMenu(Window* window) : GuiComponent(window), mMenu(window, "MAIN MENU"), mVersion(window)
+{
+	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
 
 	if (isFullUI)
 		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
@@ -42,11 +42,11 @@
 
 	addEntry("QUIT", 0xFFFFFFFF, true, [this] {openQuitMenu(); });
 
-//	addChild(&mMenu);
-//	addVersionInfo();
-//	setSize(mMenu.getSize()); 
-//	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, (Renderer::getScreenHeight()- mSize.y()) / 2);
-//}
+	addChild(&mMenu);
+	addVersionInfo();
+	setSize(mMenu.getSize()); 
+	setPosition((Renderer::getScreenWidth() - mSize.x()) / 2, (Renderer::getScreenHeight()- mSize.y()) / 2);
+}
 
 void GuiMenu::openScraperSettings()
 {
