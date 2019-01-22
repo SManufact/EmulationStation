@@ -22,8 +22,8 @@
 //{
 //	bool isFullUI = UIModeController::getInstance()->isUIModeFull();
 
-//	if (isFullUI)
-//		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
+	if (isFullUI)
+		addEntry("SCRAPER", 0x777777FF, true, [this] { openScraperSettings(); });
 
 //	addEntry("SOUND SETTINGS", 0x777777FF, true, [this] { openSoundSettings(); });
 
@@ -37,10 +37,10 @@
 //	if (isFullUI)
 //		addEntry("OTHER SETTINGS", 0x777777FF, true, [this] { openOtherSettings(); });
 
-//	if (isFullUI)
-//		addEntry("CONFIGURE INPUT", 0xFFFFFFFF, true, [this] { openConfigInput(); });
+	if (isFullUI)
+		addEntry("CONFIGURE INPUT", 0xFFFFFFFF, true, [this] { openConfigInput(); });
 
-//	addEntry("QUIT", 0xFFFFFFFF, true, [this] {openQuitMenu(); });
+	addEntry("QUIT", 0xFFFFFFFF, true, [this] {openQuitMenu(); });
 
 //	addChild(&mMenu);
 //	addVersionInfo();
