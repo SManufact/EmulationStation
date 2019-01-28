@@ -40,7 +40,7 @@ ScraperSearchComponent::ScraperSearchComponent(Window* window, SearchType type) 
 	
 	// metadata
 	auto font = Font::get(FONT_SIZE_SMALL); // this gets replaced in onSizeChanged() so its just a placeholder
-	const unsigned int mdColor = 0x777777FF;
+	const unsigned int mdColor = 0xFFFFFFFF;
 	const unsigned int mdLblColor = 0x666666FF;
 	mMD_Rating = std::make_shared<RatingComponent>(mWindow);
 	mMD_ReleaseDate = std::make_shared<DateTimeEditComponent>(mWindow);
