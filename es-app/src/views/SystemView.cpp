@@ -602,7 +602,7 @@ void  SystemView::getDefaultElements(void)
 	mCarousel.pos.y() = 0.5f * (mSize.y() - mCarousel.size.y());
 	mCarousel.origin.x() = 0.0f;
 	mCarousel.origin.y() = 0.0f;
-//	mCarousel.color = 0xFFFFFFD8;
+	mCarousel.color = 0xFFFFFFD8;
 	mCarousel.logoScale = 1.2f;
 	mCarousel.logoRotation = 7.5;
 	mCarousel.logoRotationOrigin.x() = -5;
